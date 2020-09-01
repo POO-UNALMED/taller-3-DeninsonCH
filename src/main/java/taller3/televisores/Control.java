@@ -9,7 +9,6 @@ public class Control {
 		}
 	}
 	
-	
 	public void canalUp () {
 		tv.canalUp();
 	}
