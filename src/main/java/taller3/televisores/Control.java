@@ -2,12 +2,14 @@ package taller3.televisores;
 
 public class Control {
 	public TV tv;
-	public void turnOn () {
-		tv.estado=true;
+	
+	public void setCanal (int cant) {
+		if ((cant<=120)  && (tv.estado==true) && (cant>=1)){
+			tv.canal=cant;
+		}
 	}
-	public void turnOff () {
-		tv.estado=false;
-	}
+	
+	
 	public void canalUp () {
 		tv.canalUp();
 	}
@@ -15,6 +17,13 @@ public class Control {
 		tv.canalDown();
 
 	}
+	public void turnOn () {
+		tv.estado=true;
+	}
+	public void turnOff () {
+		tv.estado=false;
+	}
+	
 	public void volumenUp () {
 		tv.volumenUp();
 	}
@@ -24,24 +33,20 @@ public class Control {
 	public TV getTV () {
 		return tv;
 	}
-	public void setTV (TV t) {
-		tv=t;
+	public void setTV (TV tl) {
+		tv=tl;
 	}
 	public TV getTv () {
 		return this.tv;
 	}
-	public void setTv (TV teve) {
-		this.tv = teve;
+	public void setTv (TV tele) {
+		this.tv = tele;
 	}
-	public void enlazar (TV teve) {
-		tv=teve;
+	public void enlazar (TV tele) {
+		tv=tele;
 		tv.control=this;
 	}
-	public void setCanal (int can) {
-		if ((can<=120)  && (tv.estado==true) && (can>=1)){
-			tv.canal=can;
-		}
-	}
+	
 		
 
 }
